@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:logi="http://www.epistematica.com/ontologies/EsperantoLogicalSyntagmaticAnalysis#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns="http://www.epistematica.com/ontologies/EsperantoPeriodAnalysis#"
+  xml:base="http://www.epistematica.com/ontologies/EsperantoPeriodAnalysis#">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://www.epistematica.com/ontologies/EsperantoLogicalSyntagmaticAnalysis.owl"/>
+    <owl:versionInfo xml:lang="en">10-07-2006 v. 1.0.0</owl:versionInfo>
+    <rdfs:comment xml:lang="en">Esperanto Period Analysis OWL Ontology</rdfs:comment>
+  </owl:Ontology>
+  <owl:Class rdf:ID="PredicativePhrase">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="logi:Predicate"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="contains"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Phrase"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="SubordinateClause">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:ID="subordinatedTo"/>
+            </owl:onProperty>
+            <owl:someValuesFrom rdf:resource="#PredicativePhrase"/>
+          </owl:Restriction>
+          <owl:Class rdf:about="#PredicativePhrase"/>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="Co-ordinateClause">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:SymmetricProperty rdf:ID="co-ordinatedWith"/>
+            </owl:onProperty>
+            <owl:someValuesFrom rdf:resource="#PredicativePhrase"/>
+          </owl:Restriction>
+          <owl:Class rdf:about="#PredicativePhrase"/>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="MainClause">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:about="#subordinatedTo"/>
+            </owl:onProperty>
+            <owl:allValuesFrom rdf:resource="http://www.w3.org/2002/07/owl#Nothing"/>
+          </owl:Restriction>
+          <owl:Class rdf:about="#PredicativePhrase"/>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="Period">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="#contains"/>
+        <owl:someValuesFrom rdf:resource="#MainClause"/>
+      </owl:Restriction>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="#subordinatedTo">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:ID="superordinatedTo"/>
+    </owl:inverseOf>
+    <rdfs:subPropertyOf>
+      <owl:ObjectProperty rdf:ID="connectedWith"/>
+    </rdfs:subPropertyOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#superordinatedTo">
+    <owl:inverseOf rdf:resource="#subordinatedTo"/>
+    <rdfs:subPropertyOf rdf:resource="#connectedWith"/>
+  </owl:ObjectProperty>
+  <owl:SymmetricProperty rdf:about="#co-ordinatedWith">
+    <rdfs:subPropertyOf rdf:resource="#connectedWith"/>
+    <owl:inverseOf rdf:resource="#co-ordinatedWith"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </owl:SymmetricProperty>
+</rdf:RDF>
+
+<!-- Copyright 2006 Epistematica Srl Milan, Italy - all rights reserved -->

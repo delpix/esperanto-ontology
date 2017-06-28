@@ -1,0 +1,512 @@
+﻿<?xml version="1.0"?>
+<rdf:RDF
+    xmlns="http://www.epistematica.com/ontologies/EsperantoGrammarAnalysis#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xml:base="http://www.epistematica.com/ontologies/EsperantoGrammarAnalysis">
+  <owl:Ontology rdf:about="">
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >10-07-2006 v. 1.0.0</owl:versionInfo>
+    <rdfs:comment xml:lang="en">Esperanto Grammar Analisys OWL Ontology</rdfs:comment>
+  </owl:Ontology>
+  <owl:Class rdf:ID="IndefinitePronoun">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Pronoun"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="PresentPassiveParticiple">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:DatatypeProperty rdf:ID="ending"/>
+            </owl:onProperty>
+            <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >-ata</owl:hasValue>
+          </owl:Restriction>
+          <owl:Class rdf:ID="PassiveParticiple"/>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="#Pronoun">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Word"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="FutureTense">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >-os</owl:hasValue>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#ending"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Tense"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Noun">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >-o</owl:hasValue>
+            <owl:onProperty>
+              <owl:DatatypeProperty rdf:about="#ending"/>
+            </owl:onProperty>
+          </owl:Restriction>
+          <owl:Class rdf:about="#Word"/>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="PastPassiveParticiple">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:DatatypeProperty rdf:about="#ending"/>
+            </owl:onProperty>
+            <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >-ita</owl:hasValue>
+          </owl:Restriction>
+          <owl:Class rdf:about="#PassiveParticiple"/>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="AttributiveAdjective">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#ending"/>
+        </owl:onProperty>
+        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >-a</owl:hasValue>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Adjective"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#PassiveParticiple">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Participle"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="FuturePassiveParticiple">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:DatatypeProperty rdf:about="#ending"/>
+            </owl:onProperty>
+            <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >-ota</owl:hasValue>
+          </owl:Restriction>
+          <owl:Class rdf:about="#PassiveParticiple"/>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="FiniteVerb">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Verb"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Conditional">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#ending"/>
+        </owl:onProperty>
+        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >-us</owl:hasValue>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="#FiniteVerb"/>
+  </owl:Class>
+  <owl:Class rdf:ID="NegativePronoun">
+    <rdfs:subClassOf rdf:resource="#Pronoun"/>
+  </owl:Class>
+  <owl:Class rdf:ID="PresentActiveParticiple">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >-anta</owl:hasValue>
+            <owl:onProperty>
+              <owl:DatatypeProperty rdf:about="#ending"/>
+            </owl:onProperty>
+          </owl:Restriction>
+          <owl:Class rdf:ID="ActiveParticiple"/>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="DemonstrativeAdjective">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Adjective"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="AccusativeWord">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >-n</owl:hasValue>
+            <owl:onProperty>
+              <owl:DatatypeProperty rdf:about="#ending"/>
+            </owl:onProperty>
+          </owl:Restriction>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="#Noun"/>
+              <owl:Class rdf:about="#Adjective"/>
+              <owl:Class rdf:about="#Pronoun"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="#Word"/>
+  </owl:Class>
+  <owl:Class rdf:about="#ActiveParticiple">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Participle"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="RelativePronoun">
+    <rdfs:subClassOf rdf:resource="#Pronoun"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Imperative">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >-u</owl:hasValue>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#ending"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="#FiniteVerb"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Adjective">
+    <rdfs:subClassOf rdf:resource="#Word"/>
+  </owl:Class>
+  <owl:Class rdf:ID="UniversalPronoun">
+    <rdfs:subClassOf rdf:resource="#Pronoun"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Preposition">
+    <rdfs:subClassOf rdf:resource="#Word"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Non-FiniteVerb">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="#Verb"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="#Tense">
+    <rdfs:subClassOf rdf:resource="#FiniteVerb"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Adverb">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >-e</owl:hasValue>
+            <owl:onProperty>
+              <owl:DatatypeProperty rdf:about="#ending"/>
+            </owl:onProperty>
+          </owl:Restriction>
+          <owl:Class rdf:about="#Word"/>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="Infinitive">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#ending"/>
+        </owl:onProperty>
+        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >-i</owl:hasValue>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="#Non-FiniteVerb"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Participle">
+    <rdfs:subClassOf rdf:resource="#Non-FiniteVerb"/>
+  </owl:Class>
+  <owl:Class rdf:ID="InterrogativePronoun">
+    <rdfs:subClassOf rdf:resource="#Pronoun"/>
+  </owl:Class>
+  <owl:Class rdf:ID="PresentTense">
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >-as</owl:hasValue>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#ending"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <rdfs:subClassOf rdf:resource="#Tense"/>
+  </owl:Class>
+  <owl:Class rdf:ID="FutureActiveParticiple">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >-onta</owl:hasValue>
+            <owl:onProperty>
+              <owl:DatatypeProperty rdf:about="#ending"/>
+            </owl:onProperty>
+          </owl:Restriction>
+          <owl:Class rdf:about="#ActiveParticiple"/>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="PossessiveAdjective">
+    <rdfs:subClassOf rdf:resource="#Adjective"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Verb">
+    <rdfs:subClassOf rdf:resource="#Word"/>
+  </owl:Class>
+  <owl:Class rdf:ID="PersonalPronoun">
+    <rdfs:subClassOf rdf:resource="#Pronoun"/>
+  </owl:Class>
+  <owl:Class rdf:ID="PastActiveParticiple">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:DatatypeProperty rdf:about="#ending"/>
+            </owl:onProperty>
+            <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >-inta</owl:hasValue>
+          </owl:Restriction>
+          <owl:Class rdf:about="#ActiveParticiple"/>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="PastTense">
+    <rdfs:subClassOf rdf:resource="#Tense"/>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:DatatypeProperty rdf:about="#ending"/>
+        </owl:onProperty>
+        <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+        >-is</owl:hasValue>
+      </owl:Restriction>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:DatatypeProperty rdf:ID="suffix">
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >-in-</rdf:first>
+          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+  </owl:DatatypeProperty>
+  <owl:DatatypeProperty rdf:about="#ending">
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >-a</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >-o</rdf:first>
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:rest rdf:parseType="Resource">
+                <rdf:rest rdf:parseType="Resource">
+                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                  >-i</rdf:first>
+                  <rdf:rest rdf:parseType="Resource">
+                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                    >-is</rdf:first>
+                    <rdf:rest rdf:parseType="Resource">
+                      <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                      >-u</rdf:first>
+                      <rdf:rest rdf:parseType="Resource">
+                        <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                        >-us</rdf:first>
+                        <rdf:rest rdf:parseType="Resource">
+                          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                          >-n</rdf:first>
+                          <rdf:rest rdf:parseType="Resource">
+                            <rdf:rest rdf:parseType="Resource">
+                              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                              >-e</rdf:first>
+                              <rdf:rest rdf:parseType="Resource">
+                                <rdf:rest rdf:parseType="Resource">
+                                  <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                  >-ita</rdf:first>
+                                  <rdf:rest rdf:parseType="Resource">
+                                    <rdf:rest rdf:parseType="Resource">
+                                      <rdf:rest rdf:parseType="Resource">
+                                        <rdf:rest rdf:parseType="Resource">
+                                          <rdf:first rdf:datatype=
+                                          "http://www.w3.org/2001/XMLSchema#string"
+                                          >-onta</rdf:first>
+                                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                        </rdf:rest>
+                                        <rdf:first rdf:datatype=
+                                        "http://www.w3.org/2001/XMLSchema#string"
+                                        >-inta</rdf:first>
+                                      </rdf:rest>
+                                      <rdf:first rdf:datatype=
+                                      "http://www.w3.org/2001/XMLSchema#string"
+                                      >-anta</rdf:first>
+                                    </rdf:rest>
+                                    <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                    >-ota</rdf:first>
+                                  </rdf:rest>
+                                </rdf:rest>
+                                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                                >-ata</rdf:first>
+                              </rdf:rest>
+                            </rdf:rest>
+                            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                            >-j</rdf:first>
+                          </rdf:rest>
+                        </rdf:rest>
+                      </rdf:rest>
+                    </rdf:rest>
+                  </rdf:rest>
+                </rdf:rest>
+                <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+                >-os</rdf:first>
+              </rdf:rest>
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >-as</rdf:first>
+            </rdf:rest>
+          </rdf:rest>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#Word"/>
+  </owl:DatatypeProperty>
+  <owl:FunctionalProperty rdf:ID="number">
+    <rdfs:domain rdf:resource="#Word"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Singolare</rdf:first>
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Plurale</rdf:first>
+          </rdf:rest>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+  </owl:FunctionalProperty>
+  <owl:FunctionalProperty rdf:ID="gender">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:range>
+      <owl:DataRange>
+        <owl:oneOf rdf:parseType="Resource">
+          <rdf:rest rdf:parseType="Resource">
+            <rdf:rest rdf:parseType="Resource">
+              <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+              >Neutro</rdf:first>
+              <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:rest>
+            <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >Femminile</rdf:first>
+          </rdf:rest>
+          <rdf:first rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+          >Maschile</rdf:first>
+        </owl:oneOf>
+      </owl:DataRange>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#Word"/>
+  </owl:FunctionalProperty>
+  <UniversalPronoun rdf:ID="ĉia"/>
+  <NegativePronoun rdf:ID="nenia"/>
+  <InterrogativePronoun rdf:ID="Kia">
+    <owl:sameAs>
+      <RelativePronoun rdf:ID="kia">
+        <owl:sameAs rdf:resource="#Kia"/>
+      </RelativePronoun>
+    </owl:sameAs>
+  </InterrogativePronoun>
+  <PersonalPronoun rdf:ID="si"/>
+  <InterrogativePronoun rdf:ID="Kio">
+    <owl:sameAs>
+      <RelativePronoun rdf:ID="kio">
+        <owl:sameAs rdf:resource="#Kio"/>
+      </RelativePronoun>
+    </owl:sameAs>
+  </InterrogativePronoun>
+  <DemonstrativeAdjective rdf:ID="tia"/>
+  <PersonalPronoun rdf:ID="mi"/>
+  <DemonstrativeAdjective rdf:ID="tio"/>
+  <IndefinitePronoun rdf:ID="ia"/>
+  <UniversalPronoun rdf:ID="ĉies"/>
+  <NegativePronoun rdf:ID="nenies"/>
+  <IndefinitePronoun rdf:ID="iu"/>
+  <PossessiveAdjective rdf:ID="ŝia"/>
+  <RelativePronoun rdf:ID="kiu">
+    <owl:sameAs>
+      <InterrogativePronoun rdf:ID="Kiu">
+        <owl:sameAs rdf:resource="#kiu"/>
+      </InterrogativePronoun>
+    </owl:sameAs>
+  </RelativePronoun>
+  <UniversalPronoun rdf:ID="ĉiu"/>
+  <PersonalPronoun rdf:ID="ili"/>
+  <RelativePronoun rdf:ID="kies">
+    <owl:sameAs>
+      <InterrogativePronoun rdf:ID="Kies">
+        <owl:sameAs rdf:resource="#kies"/>
+      </InterrogativePronoun>
+    </owl:sameAs>
+  </RelativePronoun>
+  <NegativePronoun rdf:ID="nenio"/>
+  <PossessiveAdjective rdf:ID="ĝia"/>
+  <PersonalPronoun rdf:ID="ŝi"/>
+  <PersonalPronoun rdf:ID="vi"/>
+  <PossessiveAdjective rdf:ID="nia"/>
+  <PossessiveAdjective rdf:ID="mia"/>
+  <PersonalPronoun rdf:ID="ĝi"/>
+  <NegativePronoun rdf:ID="neniu"/>
+  <PossessiveAdjective rdf:ID="via"/>
+  <DemonstrativeAdjective rdf:ID="ties"/>
+  <PersonalPronoun rdf:ID="li"/>
+  <PossessiveAdjective rdf:ID="lia"/>
+  <IndefinitePronoun rdf:ID="io"/>
+  <DemonstrativeAdjective rdf:ID="tiu"/>
+  <PossessiveAdjective rdf:ID="ilia"/>
+  <IndefinitePronoun rdf:ID="ies"/>
+  <PossessiveAdjective rdf:ID="sia"/>
+  <UniversalPronoun rdf:ID="ĉio"/>
+  <PersonalPronoun rdf:ID="oni"/>
+  <PersonalPronoun rdf:ID="ni"/>
+</rdf:RDF>
+
+<!-- Copyright 2006 Epistematica Srl Milan, Italy - all rights reserved -->

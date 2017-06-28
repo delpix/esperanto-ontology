@@ -1,0 +1,291 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:gramma="http://www.epistematica.com/ontologies/EsperantoGrammarAnalysis#"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+    xmlns="http://www.epistematica.com/ontologies/EsperantoLogicalSyntagmaticAnalysis#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xml:base="http://www.epistematica.com/ontologies/EsperantoLogicalSyntagmaticAnalysis">
+  <owl:Ontology rdf:about="">
+    <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+    >11-07-2006 v. 1.0.0</owl:versionInfo>
+    <rdfs:comment xml:lang="en">Esperanto Logical Syntagmatic Analysis OWL Ontology</rdfs:comment>
+    <owl:imports rdf:resource="http://www.epistematica.com/ontologies/EsperantoGrammarAnalysis.owl"/>
+  </owl:Ontology>
+  <owl:Class rdf:ID="PredOnTheObject">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Predicative"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="NounPredicate">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:ID="governs"/>
+            </owl:onProperty>
+            <owl:someValuesFrom>
+              <owl:Class rdf:ID="SubjectComplement"/>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+          <owl:Class rdf:ID="Predicate"/>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="PrepositionalComplement">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class rdf:ID="PrepositionalSyntagm"/>
+          <owl:Class rdf:ID="Complement"/>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="Company">
+    <rdfs:subClassOf rdf:resource="#PrepositionalComplement"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Predicative">
+    <rdfs:subClassOf rdf:resource="#PrepositionalComplement"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Term">
+    <rdfs:subClassOf rdf:resource="#PrepositionalComplement"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Object">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:ID="NounSyntagm"/>
+              <owl:Class rdf:ID="VerbalSyntagm"/>
+              <rdf:Description rdf:about="gramma:Infinitive"/>
+            </owl:unionOf>
+          </owl:Class>
+          <owl:Class rdf:about="#Complement"/>
+          <owl:Restriction>
+            <owl:onProperty rdf:resource="gramma:ending"/>
+            <owl:hasValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string"
+            >n</owl:hasValue>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="Specification">
+    <rdfs:subClassOf rdf:resource="#PrepositionalComplement"/>
+  </owl:Class>
+  <owl:Class rdf:ID="StateIn">
+    <rdfs:subClassOf>
+      <owl:Class rdf:ID="Place"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:ID="Cause">
+    <rdfs:subClassOf rdf:resource="#PrepositionalComplement"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Place">
+    <rdfs:subClassOf rdf:resource="#PrepositionalComplement"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Subject">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <rdf:Description rdf:about="gramma:Noun"/>
+              <rdf:Description rdf:about="gramma:Pronoun"/>
+            </owl:unionOf>
+          </owl:Class>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:ID="onWhichPredicates"/>
+            </owl:onProperty>
+            <owl:someValuesFrom>
+              <owl:Class rdf:about="#Predicate"/>
+            </owl:someValuesFrom>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="#Complement">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="#Predicate"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:ID="isGovernedBy"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:Class>
+  <owl:Class rdf:ID="TermOfComparison">
+    <rdfs:subClassOf rdf:resource="#PrepositionalComplement"/>
+  </owl:Class>
+  <owl:Class rdf:about="#VerbalSyntagm">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:FunctionalProperty rdf:ID="head"/>
+            </owl:onProperty>
+            <owl:allValuesFrom rdf:resource="gramma:Verb"/>
+          </owl:Restriction>
+          <owl:Class rdf:ID="Syntagm"/>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="gramma:Verb"/>
+            <owl:onProperty>
+              <owl:FunctionalProperty rdf:about="#head"/>
+            </owl:onProperty>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="Time">
+    <rdfs:subClassOf rdf:resource="#PrepositionalComplement"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MotionFrom">
+    <rdfs:subClassOf rdf:resource="#Place"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Joint">
+    <rdfs:subClassOf rdf:resource="#PrepositionalComplement"/>
+  </owl:Class>
+  <owl:Class rdf:about="#NounSyntagm">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:allValuesFrom rdf:resource="gramma:Noun"/>
+            <owl:onProperty>
+              <owl:FunctionalProperty rdf:about="#head"/>
+            </owl:onProperty>
+          </owl:Restriction>
+          <owl:Class rdf:about="#Syntagm"/>
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="gramma:Noun"/>
+            <owl:onProperty>
+              <owl:FunctionalProperty rdf:about="#head"/>
+            </owl:onProperty>
+          </owl:Restriction>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="PredOnTheSubject">
+    <rdfs:subClassOf rdf:resource="#Predicative"/>
+  </owl:Class>
+  <owl:Class rdf:ID="MotionTo">
+    <rdfs:subClassOf rdf:resource="#Place"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Predicate">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:someValuesFrom rdf:resource="#Subject"/>
+            <owl:onProperty>
+              <owl:ObjectProperty rdf:ID="predicatesAbout"/>
+            </owl:onProperty>
+          </owl:Restriction>
+          <owl:Class rdf:about="#VerbalSyntagm"/>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="Manner">
+    <rdfs:subClassOf rdf:resource="#PrepositionalComplement"/>
+  </owl:Class>
+  <owl:Class rdf:ID="Agent">
+    <rdfs:subClassOf rdf:resource="#PrepositionalComplement"/>
+  </owl:Class>
+  <owl:Class rdf:ID="VerbalPredicate">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <rdf:Description rdf:about="gramma:Verb"/>
+          <owl:Class rdf:about="#Predicate"/>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:ID="AdverbialSyntagm">
+    <rdfs:subClassOf rdf:resource="#Syntagm"/>
+  </owl:Class>
+  <owl:Class rdf:about="#PrepositionalSyntagm">
+    <owl:equivalentClass>
+      <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:FunctionalProperty rdf:about="#head"/>
+            </owl:onProperty>
+            <owl:allValuesFrom rdf:resource="gramma:Preposition"/>
+          </owl:Restriction>
+          <owl:Restriction>
+            <owl:onProperty>
+              <owl:FunctionalProperty rdf:about="#head"/>
+            </owl:onProperty>
+            <owl:someValuesFrom rdf:resource="gramma:Preposition"/>
+          </owl:Restriction>
+          <owl:Class rdf:about="#Syntagm"/>
+        </owl:intersectionOf>
+      </owl:Class>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="#governs">
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#isGovernedBy"/>
+    </owl:inverseOf>
+    <rdfs:range>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#PrepositionalComplement"/>
+          <owl:Class rdf:about="#SubjectComplement"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:range>
+    <rdfs:domain rdf:resource="#Predicate"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#predicatesAbout">
+    <rdfs:domain rdf:resource="#Predicate"/>
+    <rdfs:range rdf:resource="#Subject"/>
+    <owl:inverseOf>
+      <owl:ObjectProperty rdf:about="#onWhichPredicates"/>
+    </owl:inverseOf>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#onWhichPredicates">
+    <rdfs:range rdf:resource="#Predicate"/>
+    <rdfs:domain rdf:resource="#Subject"/>
+    <owl:inverseOf rdf:resource="#predicatesAbout"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="#isGovernedBy">
+    <rdfs:domain>
+      <owl:Class>
+        <owl:unionOf rdf:parseType="Collection">
+          <owl:Class rdf:about="#PrepositionalComplement"/>
+          <owl:Class rdf:about="#SubjectComplement"/>
+        </owl:unionOf>
+      </owl:Class>
+    </rdfs:domain>
+    <owl:inverseOf rdf:resource="#governs"/>
+    <rdfs:range rdf:resource="#Predicate"/>
+  </owl:ObjectProperty>
+  <owl:FunctionalProperty rdf:about="#head">
+    <rdfs:range rdf:resource="gramma:Word"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="#Syntagm"/>
+  </owl:FunctionalProperty>
+  <owl:Restriction>
+    <owl:allValuesFrom rdf:resource="gramma:Noun"/>
+    <owl:onProperty rdf:resource="#head"/>
+  </owl:Restriction>
+</rdf:RDF>
+
+<!-- Copyright 2006 Epistematica Srl Milan, Italy - all rights reserved -->
