@@ -1,5 +1,5 @@
 The project scope
-============================================================
+=================
 
 A formal representation for the grammar of Esperanto
 ----------------------------------------------------
@@ -36,7 +36,7 @@ by the W3C for the Semantic Web, using Protégé, the ontology editor
 developed by the University of Stanford (US), that uses the 
 automated reasoning services of Racer, the semantic reasoner developed by
 the University of Luebeck (D). The ontology in reality are three: one for
-the *grammatical analysis*, one for the *logical analysis* and one for the
+the *grammar analysis*, one for the *logical analysis* and one for the
 *analysis of the sentence*, where the highest level ontology refers to
 concepts at lower levels. In this way, once the various parts of the
 text is qualified at lower levels, so the higher levels can be automatically 
@@ -44,7 +44,7 @@ inferred.
 
 -  Download the ontologies:
 
-   -  `Grammatic Analysis <http://www.epistematica.com/ontologies/EsperantoGrammarAnalysis.owl>`__
+   -  `Grammar Analysis <http://www.epistematica.com/ontologies/EsperantoGrammarAnalysis.owl>`__
    -  `Logical Analysis-Syntactical <http://www.epistematica.com/ontologies/EsperantoLogicalSyntagmaticAnalysis.owl>`__
    -  `Analysis of sentences <http://www.epistematica.com/ontologies/EsperantoPeriodAnalysis.owl>`__
    
