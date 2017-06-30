@@ -12,7 +12,9 @@ Welcome to Ontology of Esperanto Project pages!
 
    project
    paper
- 
+
+- `GitHub project repository <https://github.com/Epistematica/esperanto-ontology>`__
+
 | 
 |
 
