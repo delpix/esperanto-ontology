@@ -16,7 +16,7 @@ Welcome to Ontology of Esperanto Project pages!
 | 
 |
 
-*A work performed in 2006 by Epistematica Srl*
+*A work performed in 2005 by Epistematica Srl*
 
 --------------
 

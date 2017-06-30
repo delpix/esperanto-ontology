@@ -2,7 +2,7 @@ README
 ======
 
 In this folder there are the results of the research titled **Ontology
-of Esperanto**, performed in 2006 by Epistematica Srl.
+of Esperanto**, performed in 2005 by Epistematica Srl.
 
 |Creative Commons| The contents of the research are licensed under a
 Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License

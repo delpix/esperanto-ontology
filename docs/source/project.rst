@@ -44,9 +44,9 @@ inferred.
 
 -  Download the ontologies:
 
-   -  `Grammar Analysis <http://www.epistematica.com/ontologies/EsperantoGrammarAnalysis.owl>`__
-   -  `Logical Analysis-Syntactical <http://www.epistematica.com/ontologies/EsperantoLogicalSyntagmaticAnalysis.owl>`__
-   -  `Analysis of sentences <http://www.epistematica.com/ontologies/EsperantoPeriodAnalysis.owl>`__
+   -  `Grammar Analysis <https://github.com/Epistematica/esperanto-ontology/blob/master/src/EsperantoGrammarAnalysis.owl>`__
+   -  `Logical Analysis <https://github.com/Epistematica/esperanto-ontology/blob/master/src/EsperantoLogicalSyntagmaticAnalysis.owl>`__
+   -  `Period Analysis <https://github.com/Epistematica/esperanto-ontology/blob/master/src/EsperantoPeriodAnalysis.owl>`__
    
 
  |
