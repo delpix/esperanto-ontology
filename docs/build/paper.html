@@ -1,50 +1,183 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Paper «Esperanto Ontology» &mdash; Ontology of Esperanto  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
     
-    <title>The paper «Esperanto Ontology» &#8212; Ontology of Esperanto 0 documentation</title>
-    
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '0',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="The project scope" href="project.html" />
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Ontology of Esperanto  documentation" href="index.html"/>
+        <link rel="prev" title="Ontology" href="ontology.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
    
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+  <div class="wy-grid-for-nav">
 
-  </head>
-  <body>
-  
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
+          
+            <a href="index.html" class="icon icon-home"> Ontology of Esperanto
+          
+
+          
             
-  <div class="section" id="the-paper-esperanto-ontology">
-<h1>The paper «Esperanto Ontology»<a class="headerlink" href="#the-paper-esperanto-ontology" title="Permalink to this headline">¶</a></h1>
+            <img src="_static/logo-black.png" class="logo" />
+          
+          </a>
+
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="project.html">Project scope</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="project.html#a-formal-representation-of-esperanto-s-grammar">A formal representation of Esperanto’s grammar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="project.html#the-owl-dl-ontology-of-esperanto">The OWL-DL ontology of Esperanto</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ontology.html">Ontology</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ontology.html#download-the-ontologies-from-github">Download the ontologies from GitHub</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Paper «Esperanto Ontology»</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#preface">Preface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#objectives">Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ontologies-and-description-logics-dl">Ontologies and Description Logics (DL)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#esperanto">Esperanto</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#approaching-the-project">Approaching the project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#scheme-of-the-ontologies">Scheme of the ontologies</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#ontology-of-grammatical-analysis">Ontology of grammatical analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ontology-of-logical-analysis">Ontology of logical analysis</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ontology-of-period-analysis">Ontology of period analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#considerations-on-the-work-done">Considerations on the work done</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#perspectives-and-hypotheses-on-the-future-of-this-type-of-ontology">Perspectives and hypotheses on the future of this type of ontology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#correlated-products">Correlated products</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bibliography-and-webgraphy">Bibliography and webgraphy</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Ontology of Esperanto</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Paper «Esperanto Ontology»</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/paper.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="paper-esperanto-ontology">
+<h1>Paper «Esperanto Ontology»<a class="headerlink" href="#paper-esperanto-ontology" title="Permalink to this headline">¶</a></h1>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -52,7 +185,7 @@
 <tr class="field-odd field"><th class="field-name">Authors:</th><td class="field-body">Marco Romano <a class="footnote-reference" href="#id5" id="id1">[1]</a>
 Luca Severini <a class="footnote-reference" href="#id6" id="id2">[2]</a></td>
 </tr>
-<tr class="field-even field"><th class="field-name">Version:</th><td class="field-body">1.1 of 2017</td>
+<tr class="field-even field"><th class="field-name">Version:</th><td class="field-body">latest</td>
 </tr>
 </tbody>
 </table>
@@ -97,8 +230,8 @@ phenomena that occur in the mind of a speaker of this language and
 others, I cannot but wish great success to this new project on Esperanto
 Ontology which united logical rigour with extremely advanced technical
 knowledge.</p>
-<p><a class="reference external" href="https://en.wikipedia.org/wiki/Renato_Corsetti">Prof. Renato Corsetti</a></p>
-<p><em>Psycho-linguist, Department of Psychology, University of Rome Sapienza</em></p>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Renato_Corsetti">Prof. Renato Corsetti</a>
+- <em>Psycho-linguist, Department of Psychology, University of Rome Sapienza</em></p>
 </div>
 <div class="section" id="objectives">
 <h2>Objectives<a class="headerlink" href="#objectives" title="Permalink to this headline">¶</a></h2>
@@ -408,11 +541,14 @@ semantic.</p>
 <h2>Correlated products<a class="headerlink" href="#correlated-products" title="Permalink to this headline">¶</a></h2>
 <p>Result of this work are three ontologies in OWL-DL format which form a
 whole with the present paper. These are the ontologies:</p>
-<ul class="simple">
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
 <li><strong>EsperantoGrammarAnalysis.owl</strong></li>
 <li><strong>EsperantoLogicalSyntagmaticAnalysis.owl</strong></li>
 <li><strong>EsperantoPeriodAnalysis.owl</strong></li>
 </ul>
+</div>
 </div>
 <div class="section" id="bibliography-and-webgraphy">
 <h2>Bibliography and webgraphy<a class="headerlink" href="#bibliography-and-webgraphy" title="Permalink to this headline">¶</a></h2>
@@ -422,7 +558,7 @@ the following bibliography is only for indicating some enlightening
 texts, possibly on an introductive level or alternatively originating
 from more authorised sources, on each argument identified by the
 paragraphs that examine them.</p>
-<p>On Esperanto:</p>
+<p><strong>Esperanto</strong>:</p>
 <ul class="simple">
 <li>Amerio F., Bonvecchiato G., Fighiera G.C. (by), <em>Esperanto: Data and
 Facts,</em> 2<sup>nd</sup> edition, FEI- Milan 2002</li>
@@ -432,13 +568,13 @@ Facts,</em> 2<sup>nd</sup> edition, FEI- Milan 2002</li>
 <li>For researching documents in Esperanto, research in this language is
 available on Google, <a class="reference external" href="http://www.google.com/intl/eo">http://www.google.com/intl/eo</a></li>
 </ul>
-<p>On Semantic Web:</p>
+<p><strong>Semantic Web</strong>:</p>
 <ul class="simple">
 <li>Gregoris A., Van Harmelen F., <em>A Semantic Web Primer</em>, The MIT Press – 2004</li>
 <li>And naturally World Wide Web Consortium documents available at
 <a class="reference external" href="http://www.w3.org/standards/semanticweb/">http://www.w3.org/standards/semanticweb/</a></li>
 </ul>
-<p>On OWL-DL language:</p>
+<p><strong>OWL-DL language</strong>:</p>
 <ul class="simple">
 <li>Costello R.L., Calvanese D., McGuiness D., Nardi D.,
 Patel-Schneider P. (by) <em>The Description Logic Handbook</em>: Theory,
@@ -493,75 +629,74 @@ perhaps accompanied by an ontology which describes it.</td></tr>
 </div>
 
 
+           </div>
+           <div class="articleComments">
+            
+           </div>
           </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="ontology.html" class="btn btn-neutral" title="Ontology" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2006-2017, Epistematica.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">The paper «Esperanto Ontology»</a><ul>
-<li><a class="reference internal" href="#preface">Preface</a></li>
-<li><a class="reference internal" href="#objectives">Objectives</a></li>
-<li><a class="reference internal" href="#ontologies-and-description-logics-dl">Ontologies and Description Logics (DL)</a></li>
-<li><a class="reference internal" href="#esperanto">Esperanto</a></li>
-<li><a class="reference internal" href="#approaching-the-project">Approaching the project</a></li>
-<li><a class="reference internal" href="#scheme-of-the-ontologies">Scheme of the ontologies</a><ul>
-<li><a class="reference internal" href="#ontology-of-grammatical-analysis">Ontology of grammatical analysis</a></li>
-<li><a class="reference internal" href="#ontology-of-logical-analysis">Ontology of logical analysis</a></li>
-<li><a class="reference internal" href="#ontology-of-period-analysis">Ontology of period analysis</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#considerations-on-the-work-done">Considerations on the work done</a></li>
-<li><a class="reference internal" href="#perspectives-and-hypotheses-on-the-future-of-this-type-of-ontology">Perspectives and hypotheses on the future of this type of ontology</a></li>
-<li><a class="reference internal" href="#correlated-products">Correlated products</a></li>
-<li><a class="reference internal" href="#bibliography-and-webgraphy">Bibliography and webgraphy</a></li>
-</ul>
-</li>
-</ul>
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="project.html" title="previous chapter">The project scope</a></li>
-  </ul></li>
-</ul>
-</div>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/paper.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
-        </div>
-      </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2017, Epistematica.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.2</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
-      
-      |
-      <a href="_sources/paper.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
 
-    
+    </section>
 
-    
-  </body>
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
 </html>

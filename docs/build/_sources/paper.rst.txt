@@ -1,10 +1,10 @@
-The paper «Esperanto Ontology»
-==============================
+Paper «Esperanto Ontology»
+==========================
 
-:Authors: 
-	Marco Romano [#]_ 
+:Authors:
+	Marco Romano [#]_
 	Luca Severini [#]_
-:Version: 1.1 of 2017 	
+:Version: latest
 
 Preface
 -------
@@ -27,7 +27,7 @@ wrote “Esperanto today sees openings for real perspectives of use” in
 his introduction to a new edition of the Esperanto Manual by Bruno
 Migliorini (Milan: OCEDES, 1995). In the end, the same concept was
 represented by Francesco Sabatini, currently president of the Crusca
-Academy; he evokes a concept that the network magazine, summarises 
+Academy; he evokes a concept that the network magazine, summarises
 thus: “…the president of the Crusca Academy
 has a proposal in the interests of both people in computing and
 Esperantists. Opting for a common language means understanding each
@@ -51,9 +51,8 @@ others, I cannot but wish great success to this new project on Esperanto
 Ontology which united logical rigour with extremely advanced technical
 knowledge.
 
-`Prof. Renato Corsetti <https://en.wikipedia.org/wiki/Renato_Corsetti>`__ 
-
-*Psycho-linguist, Department of Psychology, University of Rome Sapienza*
+`Prof. Renato Corsetti <https://en.wikipedia.org/wiki/Renato_Corsetti>`__
+- *Psycho-linguist, Department of Psychology, University of Rome Sapienza*
 
 Objectives
 ----------
@@ -386,11 +385,9 @@ Correlated products
 Result of this work are three ontologies in OWL-DL format which form a
 whole with the present paper. These are the ontologies:
 
--  **EsperantoGrammarAnalysis.owl** 
-
--  **EsperantoLogicalSyntagmaticAnalysis.owl** 
-
--  **EsperantoPeriodAnalysis.owl** 
+.. note:: 	- **EsperantoGrammarAnalysis.owl**
+			- **EsperantoLogicalSyntagmaticAnalysis.owl**
+			- **EsperantoPeriodAnalysis.owl**
 
 Bibliography and webgraphy
 --------------------------
@@ -401,23 +398,23 @@ texts, possibly on an introductive level or alternatively originating
 from more authorised sources, on each argument identified by the
 paragraphs that examine them.
 
-On Esperanto:
+**Esperanto**:
 
 -  Amerio F., Bonvecchiato G., Fighiera G.C. (by), *Esperanto: Data and
    Facts,* 2\ :sup:`nd` edition, FEI- Milan 2002
--  Migliorini B., *Manual on Esperanto*, CO.ED.ES – Milan 1995 
+-  Migliorini B., *Manual on Esperanto*, CO.ED.ES – Milan 1995
 -  We recommend visiting the Italian Esperantist Federation website at
-   http://www.esperanto.it 
+   http://www.esperanto.it
 -  For researching documents in Esperanto, research in this language is
-   available on Google, http://www.google.com/intl/eo 
+   available on Google, http://www.google.com/intl/eo
 
-On Semantic Web:
+**Semantic Web**:
 
--  Gregoris A., Van Harmelen F., *A Semantic Web Primer*, The MIT Press – 2004 
+-  Gregoris A., Van Harmelen F., *A Semantic Web Primer*, The MIT Press – 2004
 -  And naturally World Wide Web Consortium documents available at
-   http://www.w3.org/standards/semanticweb/ 
+   http://www.w3.org/standards/semanticweb/
 
-On OWL-DL language:
+**OWL-DL language**:
 
 -  Costello R.L., Calvanese D., McGuiness D., Nardi D.,
    Patel-Schneider P. (by) *The Description Logic Handbook*: Theory,
@@ -429,9 +426,9 @@ On OWL-DL language:
 In conclusion, the following are websites relative to the tools that we
 have used in this project:
 
--  Racer, software reasoner - https://www.ifis.uni-luebeck.de/~moeller/racer/ 
+-  Racer, software reasoner - https://www.ifis.uni-luebeck.de/~moeller/racer/
 
--  Protégé, ontology editor - http://protege.stanford.edu 
+-  Protégé, ontology editor - http://protege.stanford.edu
 
 |
 |

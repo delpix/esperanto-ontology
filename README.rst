@@ -1,8 +1,10 @@
 README
 ======
 
-In this folder there are the results of the research titled **Ontology
-of Esperanto**, performed in 2005 by Epistematica Srl.
+In this folder you can find the results of research project titled **Ontology
+of Esperanto**, performed in 2006 by Epistematica.
+
+Documentation is available on the `Read The Docs <http://esperanto-ontology.readthedocs.io/en/latest/>`__ site.
 
 |Creative Commons| The contents of the research are licensed under a
 Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported License
